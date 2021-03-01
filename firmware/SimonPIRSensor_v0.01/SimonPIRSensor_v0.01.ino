@@ -1,6 +1,19 @@
+#include <WaveUtil.h>
+#include <WavePinDefs.h>
+#include <mcpDac.h>
+#include <SdReader.h>
+#include <SdInfo.h>
+#include <ArduinoPins.h>
+#include <FatReader.h>
+#include <WaveHC.h>
+#include <FatStructs.h>
+
 #include <ESP8266WiFi.h>
 #include <WiFiClient.h>
 #include <ESP8266WebServer.h>
+
+//Your file with credentials
+#include <"a_def_pass.h">
 
 //Our HTML webpage contents
 #include "wc_free.h"
@@ -18,8 +31,8 @@ void ICACHE_RAM_ATTR changeHCSR501();
 unsigned long millis_int1=0;
 
 //SSID and Password of your WiFi router
-const char* ssid = "Your_SSID";
-const char* password = "Your_Password";
+const char* ssid = WIFI_SSID;
+const char* password = WIFI_PASS;
 
 ESP8266WebServer server(80); //Server on port 80
 
